@@ -1,0 +1,318 @@
+[
+    {
+        "id": "a51441fb9cad9c18",
+        "type": "tab",
+        "label": "Radar Dashboard",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "8418a4f1589dd3a7",
+        "type": "serial-port",
+        "name": "COM5",
+        "serialport": "COM5",
+        "serialbaud": "9600",
+        "databits": 8,
+        "parity": "none",
+        "stopbits": 1,
+        "waitfor": "",
+        "dtr": "none",
+        "rts": "none",
+        "cts": "none",
+        "dsr": "none",
+        "newline": "\\n",
+        "bin": "false",
+        "out": "char",
+        "addchar": "",
+        "responsetimeout": 10000
+    },
+    {
+        "id": "e983f15a196a82d2",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "40a78b8852f97e37",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "7cda6991c7d7266f",
+        "type": "ui_tab",
+        "name": "Home1",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "5f1c95454a32b017",
+        "type": "ui_group",
+        "name": "Default",
+        "tab": "e983f15a196a82d2",
+        "order": 1,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "serial_port",
+        "type": "serial-port",
+        "serialport": "/dev/ttyUSB0",
+        "serialbaud": "9600",
+        "databits": "8",
+        "parity": "none",
+        "stopbits": "1",
+        "waitfor": "",
+        "dtr": "none",
+        "rts": "none",
+        "cts": "none",
+        "dsr": "none",
+        "newline": "\\n",
+        "bin": "false",
+        "out": "char",
+        "addchar": "",
+        "responsetimeout": "10000"
+    },
+    {
+        "id": "radar_tab",
+        "type": "ui_tab",
+        "name": "Radar",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "radar_group",
+        "type": "ui_group",
+        "name": "Radar ",
+        "tab": "radar_tab",
+        "order": 1,
+        "disp": true,
+        "width": 12,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "8d9af76be760224a",
+        "type": "serial in",
+        "z": "a51441fb9cad9c18",
+        "name": "Arduino Serial",
+        "serial": "8418a4f1589dd3a7",
+        "x": 120,
+        "y": 100,
+        "wires": [
+            [
+                "9b9620096386960c"
+            ]
+        ]
+    },
+    {
+        "id": "9b9620096386960c",
+        "type": "function",
+        "z": "a51441fb9cad9c18",
+        "name": "Parse Radar Data",
+        "func": "var data = msg.payload.toString();\nvar parts = data.split(',');\nvar angle = parseFloat(parts[0]);\nvar distance = parseFloat(parts[1]);\n\nvar traces = flow.get(\"traces\");\nif (!traces) {\n    traces = [];  // создаем масив\n}\n\n// добавляем новую точку\nvar newPoint = {\n    angle: angle,\n    distance: distance,\n    timestamp: Date.now()\n};\ntraces.push(newPoint);\n\n// удаляем точкки\nvar now = Date.now();\nvar newTraces = [];\nfor (var i = 0; i < traces.length; i++) {\n    var age = now - traces[i].timestamp;\n    if (age < 3000) {\n        newTraces.push(traces[i]);\n    }\n}\ntraces = newTraces;\n\nflow.set(\"traces\", traces);\n\nreturn [\n    { payload: angle },\n    { payload: distance },\n    { payload: { angle: angle, distance: distance, traces: traces } }\n];",
+        "outputs": 3,
+        "timeout": "0",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 100,
+        "wires": [
+            [
+                "101bd1913ba72a41"
+            ],
+            [
+                "22c684e386bc7592"
+            ],
+            [
+                "750d6853ad236f05"
+            ]
+        ]
+    },
+    {
+        "id": "750d6853ad236f05",
+        "type": "ui_template",
+        "z": "a51441fb9cad9c18",
+        "group": "radar_group",
+        "name": "Radar Display",
+        "order": 3,
+        "width": 12,
+        "height": 10,
+        "format": "<div id=\"radar-container\" style=\"width:100%; height:100%; background:#000; position:relative;\">\n    <canvas id=\"radarCanvas\" width=\"600\" height=\"400\"></canvas>\n</div>\n\n<script>\n(function(scope) {\n\nlet canvas = document.getElementById('radarCanvas');\nlet paint = canvas.getContext('2d');\n\nlet centerforx = canvas.width / 2;\nlet centerfory = canvas.height - 50;\nlet maxDist = 40;\nlet maxRadius = 180;\nlet currentAngle = 0;\nlet traces = [];\n\n// рисовка\nsetInterval(() => {\n    // очистка\n    paint.clearRect(0, 0, canvas.width, canvas.height);\n    \n    // сетка\n    paint.strokeStyle = 'rgba(0,255,100,0.25)';\n    paint.lineWidth = 1;\n    \n    for (let i = 1; i <= 4; i++) {\n        paint.beginPath();\n        let radius = (maxRadius / 4) * i;\n        paint.arc(centerforx, centerfory, radius, Math.PI, 0);\n        paint.stroke();\n    }\n    \n    // линии углов\n    for (let angle = 0; angle <= 180; angle = angle + 30) {\n        let rad = angle * Math.PI / 180;\n        let x = centerforx + maxRadius * Math.cos(rad);\n        let y = centerfory - maxRadius * Math.sin(rad);\n        paint.beginPath();\n        paint.moveTo(centerforx, centerfory);\n        paint.lineTo(x, y);\n        paint.stroke();\n        paint.fillStyle = '#00ff66';\n        paint.font = '11px Consolas';\n        let tx = centerforx + (maxRadius + 15) * Math.cos(rad);\n        let ty = centerfory - (maxRadius + 15) * Math.sin(rad);\n        paint.fillText(angle + '°', tx - 10, ty + 5);\n    }\n    \n    // точки\n    let now = Date.now();\n    for (let i = traces.length - 1; i >= 0; i--) {\n        let t = traces[i];\n        let age = (now - t.timestamp) / 1000;\n        if (age > 3) {\n            traces.splice(i, 1);\n            continue;\n        }\n        if (t.distance >= maxDist) continue;\n        let opacity = 1 - (age / 3);\n        let rad = t.angle * Math.PI / 180;\n        let rr = (t.distance / maxDist) * maxRadius;\n        let x = centerforx + rr * Math.cos(rad);\n        let y = centerfory - rr * Math.sin(rad);\n        paint.beginPath();\n        paint.arc(x, y, 4, 0, 2 * Math.PI);\n        paint.fillStyle = 'rgba(255,0,0,' + opacity + ')';\n        paint.fill();\n    }\n    \n    // линия сканера\n    let rad = currentAngle * Math.PI / 180;\n    let x = centerforx + maxRadius * Math.cos(rad);\n    let y = centerfory - maxRadius * Math.sin(rad);\n    paint.beginPath();\n    paint.moveTo(centerforx, centerfory);\n    paint.lineTo(x, y);\n    paint.strokeStyle = 'rgba(0,255,0,0.8)';\n    paint.lineWidth = 2;\n    paint.stroke();\n    \n}, 30);\n\n// данные\nsetInterval(() => {\n    let msg = scope.msg;\n    if (msg && msg.payload) {\n        currentAngle = msg.payload.angle;\n        if (msg.payload.traces) {\n            traces = msg.payload.traces;\n        }\n    }\n}, 30);\n\n})(scope);\n</script>\n\n<style>\n#radar-container {\n    font-family: Consolas, monospace;\n}\ncanvas {\n    display: block;\n    margin: 0 auto;\n}\n</style>",
+        "storeOutMessages": false,
+        "fwdInMessages": false,
+        "resendOnRefresh": false,
+        "templateScope": "local",
+        "className": "",
+        "x": 680,
+        "y": 400,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "101bd1913ba72a41",
+        "type": "ui_gauge",
+        "z": "a51441fb9cad9c18",
+        "name": "Angle Gauge",
+        "group": "radar_group",
+        "order": 4,
+        "width": 6,
+        "height": "4",
+        "gtype": "gage",
+        "title": "Current Angle",
+        "label": "degrees",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "180",
+        "colors": [
+            "#00b500",
+            "#00b500",
+            "#00b500"
+        ],
+        "seg1": "60",
+        "seg2": "120",
+        "diff": false,
+        "className": "",
+        "x": 630,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "22c684e386bc7592",
+        "type": "ui_gauge",
+        "z": "a51441fb9cad9c18",
+        "name": "Distance Gauge",
+        "group": "radar_group",
+        "order": 5,
+        "width": 6,
+        "height": "4",
+        "gtype": "gage",
+        "title": "Distance",
+        "label": "centimeters",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "40",
+        "colors": [
+            "#ca3838",
+            "#e6e600",
+            "#00b500"
+        ],
+        "seg1": "10",
+        "seg2": "25",
+        "diff": false,
+        "className": "",
+        "x": 780,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "fa8fec1c868a4c99",
+        "type": "global-config",
+        "env": [],
+        "modules": {
+            "node-red-node-serialport": "2.0.3",
+            "node-red-dashboard": "3.6.6"
+        }
+    }
+]
